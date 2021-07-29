@@ -4,7 +4,7 @@ class RcdDivElement extends RcdHtmlElement {
     }
 
     focus() {
-        this.setAttribute('tabindex', 0);
+        this.setAttribute('tabindex', '0');
         super.focus();
         return this;
     }
@@ -39,6 +39,12 @@ class RcdAElement extends RcdHtmlElement {
 
     setStateRef(state, params) {
         return this.setHref('#' + RcdHistoryRouter.buildState(state, params));
+    }
+}
+
+class RcdButtonElement extends RcdHtmlElement {
+    constructor() {
+        super('button');
     }
 }
 

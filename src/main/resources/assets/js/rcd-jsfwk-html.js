@@ -223,6 +223,14 @@ class RcdHtmlElement extends RcdDomElement {
         });
     }
 
+    addKeyDownListener(key, listener) {
+        return this.addEventListener('keydown', (source, event) => {
+            if (!key || key === event.key) {
+                listener(source, event);
+            }
+        });
+    }
+
     show(show = true) {
         if (show) {
             return this.removeClass('rcd-hidden');

@@ -1,7 +1,13 @@
 class RcdFetch {
 
-    static rcdPostJson(input, body, init = {}) {
+    static postRcdJson(input, body, init = {}) {
         return RcdFetch.postJson(input, body, init)
+            .then(response => response && response.json())
+            .then(RcdFetch.handleRcdJsonResponse);
+    }
+    
+    static getRcdJson(input, init = {}) {
+        return RcdFetch.fetch(input, init)
             .then(response => response && response.json())
             .then(RcdFetch.handleRcdJsonResponse);
     }
@@ -15,9 +21,13 @@ class RcdFetch {
 
     static postJson(input, body, init = {}) {
         init.headers = init.headers || {};
-        init.headers['Content-Type'] = 'application/json';
         init.method = 'POST';
-        init.body = JSON.stringify(body)
+        if (body instanceof FormData) {
+            init.body = body;
+        } else {
+            init.headers['Content-Type'] = 'application/json';
+            init.body = JSON.stringify(body);
+        }
         return RcdFetch.fetch(input, init);
     }
 

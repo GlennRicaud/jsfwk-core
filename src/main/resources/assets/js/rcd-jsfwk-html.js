@@ -24,7 +24,7 @@ class RcdDomElement extends RcdXmlElement {
 
     setText(text) {
         super.setText(text);
-        this.domElement.innerHTML = text;
+        this.domElement.innerText = text;
         return this;
     }
 

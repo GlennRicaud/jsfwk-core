@@ -64,9 +64,13 @@
 
 
   <distributionManagement>
-    <repository>
+    <!--repository>
       <id>jfrog</id>
       <url>https://rcdsystems.jfrog.io/artifactory/maven-public</url>
+    </repository-->
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
     </repository>
   </distributionManagement>
 </project>

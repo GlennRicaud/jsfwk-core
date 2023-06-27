@@ -7,6 +7,14 @@
   <name>Rcd Javascript Framework Core</name>
   <description>Rcd Javascript Framework Core</description>
 
+
+  <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
+
   <build>
     <resources>
       <!-- Do not JS files. See JS Merge below -->
@@ -20,7 +28,8 @@
     <plugins>
       <!-- JS Merge -->
       <plugin>
-        <groupId>systems.rcd.maven</groupId>
+        <!--groupId>systems.rcd.maven</groupId-->
+        <groupId>com.github.GlennRicaud</groupId>
         <artifactId>include-maven-plugin</artifactId>
         <version>0.1.0</version>
         <executions>
@@ -61,16 +70,4 @@
       </plugin>
     </plugins>
   </build>
-
-
-  <distributionManagement>
-    <!--repository>
-      <id>jfrog</id>
-      <url>https://rcdsystems.jfrog.io/artifactory/maven-public</url>
-    </repository-->
-    <repository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io</url>
-    </repository>
-  </distributionManagement>
 </project>

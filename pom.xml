@@ -8,12 +8,12 @@
   <description>Rcd Javascript Framework Core</description>
 
 
-  <repositories>
-    <repository>
+  <pluginRepositories>
+    <pluginRepository>
       <id>jitpack.io</id>
       <url>https://jitpack.io</url>
-    </repository>
-  </repositories>
+    </pluginRepository>
+  </pluginRepositories>
 
   <build>
     <resources>
